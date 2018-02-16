@@ -1,0 +1,12 @@
+#output {
+    display: flex;
+}
+
+#selection {
+    margin-bottom: 21px;
+}
+
+.theBorder{
+    border-style: solid;
+    border-color: black;
+}

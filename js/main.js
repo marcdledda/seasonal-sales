@@ -25,7 +25,7 @@ function showProduct(productInput){
     for (let item in productInput){
         let productItem = productInput[item];
         // console.log(productInput[item]);
-        productStuff += `<div>`;
+        productStuff += `<div class="theBorder">`;
         productStuff += `<div>${productItem.name} <div>${productItem.price}</div></div>`;
         productStuff += `</div>`;
     }
@@ -104,12 +104,12 @@ function winterShowProduct(productInput){
             let productDeci = ((1 - categoryData.categories["0"].discount)* productItem.price);
             let productPrice = productDeci.toFixed(2);
             // console.log("this is 1");
-            productStuff += `<div>`;
+            productStuff += `<div class="theBorder">`;
             productStuff += `<div>${productItem.name} <div>${productPrice}</div></div>`;
             productStuff += `</div>`;
         } else {
             // console.log("this is not");
-            productStuff += `<div>`;
+            productStuff += `<div class="theBorder">`;
             productStuff += `<div>${productItem.name} <div>${productItem.price}</div></div>`;
             productStuff += `</div>`;
         }
@@ -128,12 +128,12 @@ function autumnShowProduct(productInput){
             let productDeci = ((1 - categoryData.categories["1"].discount)* productItem.price);
             let productPrice = productDeci.toFixed(2);
             // console.log("this is 2");
-            productStuff += `<div>`;
+            productStuff += `<div class="theBorder">`;
             productStuff += `<div>${productItem.name} <div>${productPrice}</div></div>`;
             productStuff += `</div>`;
         } else {
             // console.log("this is not");
-            productStuff += `<div>`;
+            productStuff += `<div class="theBorder">`;
             productStuff += `<div>${productItem.name} <div>${productItem.price}</div></div>`;
             productStuff += `</div>`;
         }
@@ -152,12 +152,12 @@ function springShowProduct(productInput){
             let productDeci = ((1 - categoryData.categories["2"].discount)* productItem.price);
             let productPrice = productDeci.toFixed(2);
             // console.log("this is 3");
-            productStuff += `<div>`;
+            productStuff += `<div class="theBorder">`;
             productStuff += `<div>${productItem.name} <div>${productPrice}</div></div>`;
             productStuff += `</div>`;
         } else {
             // console.log("this is not");
-            productStuff += `<div>`;
+            productStuff += `<div class="theBorder">`;
             productStuff += `<div>${productItem.name} <div>${productItem.price}</div></div>`;
             productStuff += `</div>`;
         }
