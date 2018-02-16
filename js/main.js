@@ -2,27 +2,60 @@
 
 console.log("main.js TEST");
 
-let data_call = document.getElementById("btn-product");
-data_call.addEventListener("click", getProducts);
+let dataRequest = new XMLHttpRequest();
+dataRequest.open("GET", "js/products.json");
+dataRequest.send();
+dataRequest.addEventListener("load", dataLoad);
+dataRequest.addEventListener("error", dataError);
 
-function getProducts() {
-    console.log("EZ Function");
+function dataLoad(){
+    console.log("Loading function!");
+    let productData = JSON.parse(event.target.responseText);
+    console.log("RAW productData", productData);
+    showProduct(productData.products);
+}
 
-    let productXHR = new XMLHttpRequest();
+function showProduct(productInput){
+    let productOutput = document.getElementById("output");
+    let productStuff = '';
+    for (let item in productInput){
+        let productItem = productInput[item];
+        console.log(productInput[item]);
+        productStuff += `<div>`;
+        productStuff += `<div>${productItem.name}</div>`;
+        productStuff += `<div class="CID-${productItem.category_id}">${productItem.price}</div>`
+        productStuff += `</div>`;
+    }
+    productOutput.innerHTML = productStuff;
+}
 
-    productXHR.addEventListener("load", function(){
-        console.log("It loaded");
-        let productData = JSON.parse(this.responseText);
-        console.log("Product Raw:", productData);
-        console.log(".products:", productData.products);
-        let productProduct = productData.products;
-        
-    });
+function dataError(){
+    console.log("Error function!");
+}
 
-    productXHR.addEventListener("error", function(){
-        console.log("It did not load");
-    });
+let data2Request = new XMLHttpRequest();
+data2Request.open("GET", "js/categories.json");
+data2Request.send();
 
-    productXHR.open("GET", "js/products.json");
-    productXHR.send();
+
+//==============
+//== NON JSON ==
+//==============
+let selection = document.getElementById("selection");
+selection.addEventListener("change", testout);
+let testingDIV = document.getElementById("testout");
+
+function testout(){
+    if(selection.value == "summer"){
+        testingDIV.innerHTML = "";
+    }
+    if(selection.value == "winter"){
+        testingDIV.innerHTML = "WINTER BAH";
+    }
+    if(selection.value == "autumn"){
+        testingDIV.innerHTML = "AUTUMN BAH";
+    }
+    if(selection.value == "spring"){
+        testingDIV.innerHTML = "SPRING BAH";
+    }
 }
