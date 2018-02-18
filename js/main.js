@@ -64,31 +64,31 @@ function data2Error(){
 
 let categoryData = [];
 
-//==============
-//== NON JSON ==
-//==============
+//===============
+//== DISCOUNTS ==
+//===============
 let selection = document.getElementById("selection");
 selection.addEventListener("change", testout);
-let testingDIV = document.getElementById("testout");
+// let testingDIV = document.getElementById("testout");
 
 function testout(){
     if(selection.value == "summer"){
-        testingDIV.innerHTML = "";
+        // testingDIV.innerHTML = "";
         showProduct(productData.products);
     }
 
     if(selection.value == "winter"){
-        testingDIV.innerHTML = "WINTER BAH";
+        // testingDIV.innerHTML = "WINTER BAH";
         winterShowProduct(productData.products);
     }
 
     if(selection.value == "autumn"){
-        testingDIV.innerHTML = "AUTUMN BAH";
+        // testingDIV.innerHTML = "AUTUMN BAH";
         autumnShowProduct(productData.products);
     }
 
     if(selection.value == "spring"){
-        testingDIV.innerHTML = "SPRING BAH";
+        // testingDIV.innerHTML = "SPRING BAH";
         springShowProduct(productData.products);
     }
 }
@@ -105,7 +105,7 @@ function winterShowProduct(productInput){
             let productPrice = productDeci.toFixed(2);
             // console.log("this is 1");
             productStuff += `<div class="theBorder">`;
-            productStuff += `<div>${productItem.name} <div>${productPrice}</div></div>`;
+            productStuff += `<div>${productItem.name} <div class="discount">${productPrice}</div></div>`;
             productStuff += `</div>`;
         } else {
             // console.log("this is not");
@@ -129,7 +129,7 @@ function autumnShowProduct(productInput){
             let productPrice = productDeci.toFixed(2);
             // console.log("this is 2");
             productStuff += `<div class="theBorder">`;
-            productStuff += `<div>${productItem.name} <div>${productPrice}</div></div>`;
+            productStuff += `<div>${productItem.name} <div class="discount">${productPrice}</div></div>`;
             productStuff += `</div>`;
         } else {
             // console.log("this is not");
@@ -153,7 +153,7 @@ function springShowProduct(productInput){
             let productPrice = productDeci.toFixed(2);
             // console.log("this is 3");
             productStuff += `<div class="theBorder">`;
-            productStuff += `<div>${productItem.name} <div>${productPrice}</div></div>`;
+            productStuff += `<div>${productItem.name} <div class="discount">${productPrice}</div></div>`;
             productStuff += `</div>`;
         } else {
             // console.log("this is not");
