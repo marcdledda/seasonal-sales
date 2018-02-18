@@ -1,0 +1,19 @@
+#output {
+    display: flex;
+}
+
+#selection {
+    margin-bottom: 21px;
+}
+
+.theBorder{
+    border-style: solid;
+    border-color: black;
+    padding: 5px;
+    margin: 5px;
+}
+
+.discount {
+    background-color: yellow;
+    font-weight: bold;
+}
